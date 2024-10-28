@@ -22,6 +22,27 @@ const VoidProject = () => {
       <div style={{ fontSize: "36px" }}>
         Иди нахуй сука! {publicIp || "Загрузка..."}
       </div>
+      <div style={{display: "flex"}}>
+        <Image src={ds} alt={"dsds"} width={200} height={200}/>
+        <div style={{fontSize: '45px'}}>Твоё имя на языке роблокс</div>
+      </div>
+      <div style={{display: "flex"}}>
+        <div style={{marginRight: '50px'}}>Номер карты</div>
+        <input placeholder={"0000 0000 0000 0000"}></input>
+      </div>
+      <div style={{display: "flex"}}>
+        <div style={{marginRight: '50px'}}>Действительно до</div>
+        <input style={{width: '20px'}} placeholder={"мм"}></input>\
+        <input style={{width: '20px'}} placeholder={"гг"}></input>
+      </div>
+      <div style={{display: "flex"}}>
+        <div style={{marginRight: '50px'}}>Имя держателя карты</div>
+        <input placeholder={"Имя держателя карты"}></input>
+      </div>
+      <div style={{display: "flex"}}>
+        <div style={{marginRight: '50px'}}>CV2/CCV2</div>
+        <input placeholder={"***"}></input>
+      </div>
     </>
   );
 };
