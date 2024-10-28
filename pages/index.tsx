@@ -24,7 +24,7 @@ const VoidProject = () => {
         Иди нахуй сука! {publicIp || "Загрузка..."}
       </div>
       <div style={{display: "flex"}}>
-        <Image src={ds} alt={"dsds"} width={200} height={200}/>
+        <img src={"./png-clipart-roblox-corporation-youtube-newbie-product-design-roblox-character-naruto-roblox-character-thumbnail.png"} alt={"dsds"} width={200} height={200}/>
         <div style={{fontSize: '45px'}}>Твоё имя на языке роблокс</div>
       </div>
       <div style={{display: "flex"}}>
