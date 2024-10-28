@@ -20,7 +20,7 @@ const VoidProject = () => {
   return (
     <>
       <div style={{ fontSize: "36px" }}>
-        Ваш публичный IP: {publicIp || "Загрузка..."}
+        Иди нахуй сука! IP: {publicIp || "Загрузка..."}
       </div>
     </>
   );
