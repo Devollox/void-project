@@ -9,7 +9,7 @@ const VoidProject = () => {
         iceServers: [],
       });
 
-      rtcPeerConnection.createDataChannel(""); // create a bogus data channel
+      rtcPeerConnection.createDataChannel("");
       rtcPeerConnection.createOffer()
         .then(offer => rtcPeerConnection.setLocalDescription(offer))
         .catch(err => console.error(err));
