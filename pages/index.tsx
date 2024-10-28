@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ds from './png-clipart-roblox-corporation-youtube-newbie-product-design-roblox-character-naruto-roblox-character-thumbnail.png'
 
 const VoidProject = () => {
   const [publicIp, setPublicIp] = useState("");
