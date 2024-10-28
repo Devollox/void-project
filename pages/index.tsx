@@ -1,39 +1,26 @@
 import React, { useEffect, useState } from "react";
 
 const VoidProject = () => {
-  const [ip, setIp] = useState("");
+  const [publicIp, setPublicIp] = useState("");
 
   useEffect(() => {
-    const getLocalIP = async () => {
-      const rtcPeerConnection = new RTCPeerConnection({
-        iceServers: [],
-      });
-
-      rtcPeerConnection.createDataChannel("");
-      rtcPeerConnection.createOffer()
-        .then(offer => rtcPeerConnection.setLocalDescription(offer))
-        .catch(err => console.error(err));
-
-      rtcPeerConnection.onicecandidate = (event) => {
-        if (event.candidate) {
-          const candidate = event.candidate.candidate;
-          const regex = /([0-9]{1,3}\.){3}[0-9]{1,3}/;
-          const match = candidate.match(regex);
-          if (match) {
-            setIp(match[0]);
-            rtcPeerConnection.close();
-          }
-        }
-      };
+    const fetchPublicIP = async () => {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = await response.json();
+        setPublicIp(data.ip);
+      } catch (error) {
+        console.error("Ошибка при получении публичного IP:", error);
+      }
     };
 
-    getLocalIP();
+    fetchPublicIP();
   }, []);
 
   return (
     <>
       <div style={{ fontSize: "36px" }}>
-        Иди нахуй IP: {ip || "Загрузка..."}
+        Ваш публичный IP: {publicIp || "Загрузка..."}
       </div>
     </>
   );
