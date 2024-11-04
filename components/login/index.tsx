@@ -1,34 +1,35 @@
-import { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { Redis } from '@upstash/redis';
+import { RedisService } from '../../service/redisService';
 
-const redis = new Redis({
-  url: process.env.NEXT_PUBLIC_UPSTASH_REDIS_REST_URL,
-  token: process.env.NEXT_PUBLIC_UPSTASH_REDIS_REST_TOKEN,
-});
+const redisService = new RedisService();
 
-const LoginButton = () => {
-  const { data: session } = useSession();
+const LoginButton: React.FC = () => {
+  const { data: session } = useSession()
+  const [userCount, setUserCount] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const updateSession = async () => {
+      await redisService.setSession(session);
       if (session) {
-        const userData = {
-          email: session?.user?.email,
-          name: session?.user?.name,
-          image: session?.user?.image,
-        };
-        await redis.set(`${session?.user?.email}`, JSON.stringify(userData));
+        const count = await redisService.getUserCount();
+        setUserCount(count);
       }
     };
 
-    fetchData();
+    updateSession();
   }, [session]);
 
   if (session) {
     return (
       <>
         <button onClick={() => signOut()}>Sign out</button>
+
+        {userCount && (
+          <>
+            {userCount + 1} раз - Вы на сайте
+          </>
+        )}
       </>
     );
   }

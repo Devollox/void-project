@@ -43,5 +43,3 @@ export class CartService  {
     localStorage.setItem("cartItems", JSON.stringify([]))
   }
 }
-
-export const cartService = new CartService()
