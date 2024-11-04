@@ -27,7 +27,7 @@ const LoginButton: React.FC = () => {
 
         {userCount && (
           <>
-            {userCount + 1} раз - Вы на сайте
+            {userCount} раз - Вы на сайте
           </>
         )}
       </>
