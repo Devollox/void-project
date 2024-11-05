@@ -65,6 +65,38 @@ const Head: React.FC<HeadProps> = ({
 			/>
 			<meta name='theme-color' content='#000000' />
 
+			{!systemTheme || systemTheme === 'dark' ? (
+				<>
+					<link
+						rel='alternate icon'
+						type='image/png'
+						href='/favicons/white-fav.png'
+						key='dynamic-favicon-alternate'
+					/>
+					<link
+						rel='icon'
+						type='image/svg+xml'
+						href='/favicons/white-fav.png'
+						key='dynamic-favicon'
+					/>
+				</>
+			) : (
+				<>
+					<link
+						rel='alternate icon'
+						type='image/png'
+						href='/favicons/dark-fav.png'
+						key='dynamic-favicon-alternate'
+					/>
+					<link
+						rel='icon'
+						type='image/svg+xml'
+						href='/favicons/dark-fav.png'
+						key='dynamic-favicon'
+					/>
+				</>
+			)}
+
 			{children}
 		</NextHead>
 	)
