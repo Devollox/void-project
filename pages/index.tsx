@@ -1,11 +1,14 @@
-import LoginButton from "@/components/login";
+import LoginButton from '@/components/login'
+import Page from '@/components/page'
 
 const VoidProject = () => {
-  return (
-    <>
-      <LoginButton />
-    </>
-  )
-};
+	return (
+		<>
+			<Page>
+				<LoginButton />
+			</Page>
+		</>
+	)
+}
 
 export default VoidProject

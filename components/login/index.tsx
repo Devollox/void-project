@@ -1,44 +1,33 @@
-import React, {useEffect, useState} from 'react';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { RedisService } from '../../service/redisService';
+import { signIn, signOut, useSession } from 'next-auth/react'
+import React, { useEffect } from 'react'
+import { RedisService } from '../../service/redisService'
 
-const redisService = new RedisService();
+const redisService = new RedisService()
 
 const LoginButton: React.FC = () => {
-  const { data: session } = useSession()
-  const [userCount, setUserCount] = useState<number | null>(null);
+	const { data: session } = useSession()
 
-  useEffect(() => {
-    const updateSession = async () => {
-      await redisService.setSession(session);
-      if (session) {
-        const count = await redisService.getUserCount();
-        setUserCount(count);
-      }
-    };
+	useEffect(() => {
+		const updateSession = async () => {
+			await redisService.setSession(session)
+		}
 
-    updateSession();
-  }, [session]);
+		updateSession()
+	}, [session])
 
-  if (session) {
-    return (
-      <>
-        <button onClick={() => signOut()}>Sign out</button>
+	if (session) {
+		return (
+			<>
+				<button onClick={() => signOut()}>Sign out</button>
+			</>
+		)
+	}
 
-        {userCount && (
-          <>
-            {userCount} раз - Вы на сайте
-          </>
-        )}
-      </>
-    );
-  }
+	return (
+		<>
+			<button onClick={() => signIn()}>Sign in</button>
+		</>
+	)
+}
 
-  return (
-    <>
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  );
-};
-
-export default LoginButton;
+export default LoginButton
