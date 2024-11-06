@@ -28,7 +28,7 @@ const Profile = () => {
 						signOut({ callbackUrl: '/' })
 					}}
 				>
-					Выйди нахуй из системы и не позорься! <- click
+					Выйди нахуй из системы и не позорься! <- click {session?.user?.name}
 				</div>
 			</Page>
 		</>
