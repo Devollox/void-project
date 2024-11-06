@@ -1,10 +1,25 @@
+import { RedisService } from '@/service/redisService'
+import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import Cart from '../icons/cart'
 import Profile from '../icons/profile'
 import Search from '../icons/search'
 import styles from './navbar.module.css'
 
+const redisService = new RedisService()
+
 const Navbar = () => {
+	const { data: session } = useSession()
+
+	useEffect(() => {
+		const updateSession = async () => {
+			await redisService.setSession(session)
+		}
+
+		updateSession()
+	}, [session])
+
 	return (
 		<>
 			<div className={styles.container_navbar}>
@@ -21,9 +36,23 @@ const Navbar = () => {
 						<Link href='/'>
 							<Search />
 						</Link>
-						<Link href='/profile'>
-							<Profile />
-						</Link>
+						{session ? (
+							<>
+								<Link href='/profile'>
+									<Profile />
+								</Link>
+							</>
+						) : (
+							<>
+								<a
+									onClick={() => {
+										signIn()
+									}}
+								>
+									<Profile />
+								</a>
+							</>
+						)}
 						<Link href='/cart' style={{ marginRight: '0' }}>
 							<Cart />
 						</Link>

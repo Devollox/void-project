@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React from 'react'
-import Navbar from '../navbar'
 
 interface Props {
 	status?: number | string | null
@@ -11,9 +10,9 @@ const Error: React.FC<Props> = ({ status, children }) => {
 	return (
 		<>
 			<Head>
-				<title>{status} — Void Project</title>
+				<title>{status} — Devollox</title>
 			</Head>
-			<Navbar />
+
 			<main>{children}</main>
 		</>
 	)

@@ -2,6 +2,28 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
+	height: 100%;
+	width: 100%;
+	color: white;
 	background-color: black;
+}
+main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.main_content {
+	width: 100%;
+}
+@media (min-width: 1790px) {
+	.main_content {
+		width: 1680px;
+		margin: 100px;
+	}
+}
+@media (max-width: 1790px) {
+	.main_content {
+		margin: 100px 30px 0 30px;
+	}
 }

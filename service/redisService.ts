@@ -24,7 +24,7 @@ export class RedisService {
 		this.saveUserData()
 	}
 
-	private async saveUserData<T>() {
+	private async saveUserData() {
 		if (this.session) {
 			const userId: string = this.session.user.id!
 			const currentData: UserData | null = await this.redis.get(userId)

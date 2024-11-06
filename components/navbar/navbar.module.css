@@ -33,7 +33,7 @@
 .wrapper_navigation_bar {
 	height: 14px;
 
-		& a {
+	& a {
 		margin-right: 20px;
 		opacity: 0.5;
 

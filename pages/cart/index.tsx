@@ -1,9 +1,9 @@
-import Navbar from '@/components/navbar'
+import Page from '@/components/page'
 
 const Cart = () => {
 	return (
 		<>
-			<Navbar />
+			<Page title='Cart'></Page>
 		</>
 	)
 }

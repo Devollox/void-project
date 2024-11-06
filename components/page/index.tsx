@@ -14,8 +14,12 @@ const Page: React.FC<PageProps> = ({ title, description, children }) => {
 				title={`${title ? `${title} - ` : ''}Void Project`}
 				description={description}
 			/>
-			<Navbar />
-			<main>{children}</main>
+			<div style={{ display: 'flex' }}>
+				<Navbar />
+				<main>
+					<div className='main_content'>{children}</div>
+				</main>
+			</div>
 		</>
 	)
 }
