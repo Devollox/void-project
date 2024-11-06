@@ -46,7 +46,7 @@ const Navbar = () => {
 							<>
 								<a
 									onClick={() => {
-										signIn()
+										signIn('null', { callbackUrl: '/profile' })
 									}}
 								>
 									<Profile />
