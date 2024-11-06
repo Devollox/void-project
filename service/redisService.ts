@@ -1,10 +1,10 @@
 import { Redis } from '@upstash/redis'
 
 interface UserData {
-	id?: any
-	email?: any
-	name?: any
-	image?: any
+	id?: string
+	email?: string | null
+	name?: string | null
+	image?: string | null
 	count?: number
 }
 
@@ -24,10 +24,10 @@ export class RedisService {
 		this.saveUserData()
 	}
 
-	private async saveUserData() {
+	private async saveUserData<T>() {
 		if (this.session) {
-			const userId = this.session.user.id
-			const currentData: any = await this.redis.get(userId)
+			const userId: string = this.session.user.id!
+			const currentData: UserData | null = await this.redis.get(userId)
 			let userData: UserData
 
 			if (currentData) {

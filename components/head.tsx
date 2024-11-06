@@ -68,12 +68,6 @@ const Head: React.FC<HeadProps> = ({
 			{!systemTheme || systemTheme === 'dark' ? (
 				<>
 					<link
-						rel='alternate icon'
-						type='image/png'
-						href='/favicons/white-fav.png'
-						key='dynamic-favicon-alternate'
-					/>
-					<link
 						rel='icon'
 						type='image/svg+xml'
 						href='/favicons/white-fav.png'
@@ -82,12 +76,6 @@ const Head: React.FC<HeadProps> = ({
 				</>
 			) : (
 				<>
-					<link
-						rel='alternate icon'
-						type='image/png'
-						href='/favicons/dark-fav.png'
-						key='dynamic-favicon-alternate'
-					/>
 					<link
 						rel='icon'
 						type='image/svg+xml'
