@@ -54,7 +54,7 @@
 
 	text-align: center !important;
 
-	a img {
+	& a img {
 		object-fit: cover;
 		width: 330px;
 		height: 330px;
