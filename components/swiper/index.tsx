@@ -3,7 +3,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { Autoplay, Pagination, Thumbs } from 'swiper/modules'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import './swiper.global.css'
 import SwiperContainer from './swipercontainer'
 
 const SwiperProvider = () => {
