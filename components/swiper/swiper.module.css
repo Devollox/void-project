@@ -1,0 +1,129 @@
+.wrapper_swiper_content {
+	position: absolute;
+	left: 152px;
+	top: 195px;
+	width: 521px;
+}
+@media (max-width: 1189px) {
+	.swiper_content_inside {
+		width: 406px;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 767px) {
+	.swiper_content_inside {
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 1789px) {
+	.wrapper_swiper_content {
+		left: 152px;
+		top: 171px;
+	}
+}
+@media (max-width: 1589px) {
+	.wrapper_swiper_content {
+		left: 108px;
+		top: 107px;
+		width: 414px;
+	}
+}
+@media (max-width: 1189px) {
+	.wrapper_swiper_content {
+		position: absolute;
+		top: auto;
+		left: 0;
+		bottom: -200px;
+		width: 100%;
+		padding-top: 120px;
+		background: -moz-linear-gradient(
+			top,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		background: -webkit-linear-gradient(
+			top,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+	}
+}
+@media (max-width: 767px) {
+	.wrapper_swiper_content {
+		position: absolute;
+		top: auto;
+		left: 0;
+		bottom: 180px;
+		width: 100%;
+		padding-top: 120px;
+		background: -moz-linear-gradient(
+			top,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		background: -webkit-linear-gradient(
+			top,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 30%
+		);
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+	}
+}
+.swiper_description {
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 62px;
+}
+@media (max-width: 1589px) {
+	.swiper_description {
+		font-size: 38px;
+		line-height: 49px;
+	}
+}
+@media (max-width: 1189px) {
+	.swiper_description {
+		font-size: 38px;
+		line-height: 49px;
+	}
+}
+@media (max-width: 767px) {
+	.swiper_description {
+		font-size: 29px;
+		line-height: 38px;
+	}
+}
+.swiper_button {
+	margin-top: 20px;
+	display: inline-block;
+	height: 52px;
+	line-height: 50px;
+	color: #ffffff;
+	background-color: transparent;
+	font-size: 16px;
+	font-weight: 600;
+	outline: none;
+	padding: 0 38px;
+	border: 2px solid #1378f5;
+	border-radius: 26px;
+	transition: all 0.3s;
+	opacity: 0.8;
+
+	&:hover {
+		border: 2px solid #0073ff;
+		opacity: 1;
+	}
+}

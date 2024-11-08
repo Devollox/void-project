@@ -1,0 +1,134 @@
+.wrapper_product_cart {
+	position: relative;
+	max-width: 390px;
+	background: #151515;
+	border-radius: 12px;
+	margin-bottom: 40px;
+	padding: 30px;
+
+	&:hover {
+		.read_more {
+			opacity: 0.3;
+		}
+		.product_like {
+			opacity: 0.3;
+		}
+	}
+}
+.product_status {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	z-index: 10;
+
+	& span {
+		display: inline-block;
+		height: 23px;
+		line-height: 23px;
+		font-size: 11px;
+		font-weight: 600;
+		color: #ffffff;
+		padding: 0 10px;
+		text-transform: uppercase;
+		border-radius: 17px;
+		margin-right: 4px;
+		background: #333;
+		color: #999 !important;
+	}
+}
+.product_like {
+	position: absolute;
+	top: 29px;
+	right: 30px;
+	opacity: 0;
+	transition: all 0.3s;
+	filter: grayscale(100%);
+	cursor: pointer;
+
+	&:hover {
+		filter: grayscale(0%);
+	}
+}
+.product_image {
+	padding-top: 10px;
+
+	text-align: center !important;
+
+	a img {
+		object-fit: cover;
+		width: 330px;
+		height: 330px;
+	}
+	@media (max-width: 1789px) {
+		a img {
+			width: 310px;
+			height: 310px;
+		}
+	}
+	@media (max-width: 1589px) {
+		a img {
+			width: 310px;
+			height: 310px;
+		}
+	}
+	@media (max-width: 1189px) {
+		a img {
+			display: inline-block;
+			width: 296px;
+			height: 296px;
+		}
+	}
+	@media (max-width: 767px) {
+		a img {
+			display: inline-block;
+			width: 280px;
+			height: 280px;
+		}
+	}
+	@media (max-width: 380px) {
+		a img {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+.product_title {
+	padding-bottom: 0;
+	font-family: 'geometria-light', 'Open Sans', sans-serif;
+	font-size: 32px;
+	line-height: 36px;
+	letter-spacing: 5px;
+	font-weight: 400;
+	padding-top: 0;
+}
+.product_info span {
+	display: inline-block;
+	font-size: 15px;
+	line-height: 24px;
+}
+.price {
+	font-weight: 600;
+	margin-right: 2px;
+	color: rgba(255, 255, 255, 0.65) !important;
+}
+.price_currency {
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.65);
+}
+.read_more {
+	display: block;
+	position: absolute;
+	right: 42px;
+	bottom: 34px;
+	opacity: 0;
+	transition: all 0.3s;
+}
+.wrapper_cart {
+	margin-top: 50px;
+	@media (max-width: 1789px) {
+		& {
+			margin: 50px 20px;
+		}
+	}
+}

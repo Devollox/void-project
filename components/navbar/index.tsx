@@ -13,8 +13,8 @@ const Navbar = () => {
 	const { data: session } = useSession()
 
 	useEffect(() => {
-		const updateSession = async () => {
-			await redisService.setSession(session)
+		const updateSession = () => {
+			redisService.setSession(session)
 		}
 
 		updateSession()
@@ -26,7 +26,9 @@ const Navbar = () => {
 				<div className={styles.wrapper_conent}>
 					<div className={styles.wrapper_menu}>
 						<div className={styles.logo_container}>
-							<span className={styles.logo_text}>ПУСТОТА ПРОДЖЕКТ</span>
+							<Link href='/'>
+								<span className={styles.logo_text}>ПУСТОТА ПРОДЖЕКТ</span>
+							</Link>
 						</div>
 						<div className={styles.wrapper_burger_menu}>
 							<label className={styles.burger} htmlFor='burger_checkbox' />

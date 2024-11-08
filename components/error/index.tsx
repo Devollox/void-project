@@ -10,7 +10,7 @@ const Error: React.FC<Props> = ({ status, children }) => {
 	return (
 		<>
 			<Head>
-				<title>{status} — Devollox</title>
+				<title>{status} — Void Project</title>
 			</Head>
 
 			<main>{children}</main>

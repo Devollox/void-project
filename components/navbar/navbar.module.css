@@ -4,7 +4,9 @@
 	width: 100%;
 }
 .container_navbar {
-	border-bottom: 1px solid hsla(0, 0%, 100%, 0.102);
+	background-color: black;
+	z-index: 2;
+	max-height: 80px;
 	width: 100%;
 	position: fixed;
 	display: flex;
@@ -15,15 +17,24 @@
 		width: 1680px;
 		margin: 30px;
 	}
+	.wrapper_burger_menu {
+		display: none;
+	}
 }
 @media (max-width: 1790px) {
 	.wrapper_conent {
 		margin: 30px;
 	}
+	.wrapper_burger_menu {
+		display: none;
+	}
 }
 @media (max-width: 540px) {
 	.logo_container {
 		display: none;
+	}
+	.wrapper_burger_menu {
+		display: flex;
 	}
 }
 .wrapper_burger_menu {
