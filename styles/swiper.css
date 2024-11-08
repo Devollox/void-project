@@ -1,0 +1,119 @@
+.swiper_main {
+	max-width: 1680px !important;
+	border-radius: 12px !important;
+}
+@media (max-width: 1789px) {
+	.swiper_main {
+		height: 673px !important;
+	}
+}
+@media (max-width: 1589px) {
+	.swiper_main {
+		height: 502px !important;
+	}
+}
+@media (max-width: 1189px) {
+	.swiper_main {
+		height: 1024px !important;
+	}
+}
+@media (max-width: 767px) {
+	.swiper_main {
+		height: 650px !important;
+	}
+}
+@media (max-width: 1790px) {
+	.swiper_main {
+		border-radius: 0 !important;
+	}
+}
+.swiper_main .swiper-slide {
+	height: 720px !important;
+
+	& img {
+		object-fit: cover !important;
+		max-width: 100% !important;
+	}
+}
+@media (max-width: 1189px) {
+	.swiper_main .swiper-slide img {
+		display: block !important;
+		height: 682px !important;
+	}
+}
+@media (max-width: 767px) {
+	.swiper_main .swiper-slide img {
+		height: 352px !important;
+		width: auto !important;
+	}
+}
+.swiper_main .swiper-pagination-bullet {
+	border-radius: 0 !important;
+	width: 3px;
+	height: 12px !important;
+	background: #ffffff;
+	opacity: 0.3;
+	transition: all 0.3s;
+	margin-right: 22px;
+	outline: none;
+	height: 22px;
+	opacity: 0.3;
+}
+.swiper_main .swiper-pagination-bullet-active {
+	background: #115feb;
+	height: 22px !important;
+	opacity: 1 !important;
+}
+
+.swipper_cart {
+	margin-top: 50px;
+	@media (max-width: 1790px) {
+		& {
+			margin-right: 20px !important;
+			margin-left: 20px !important;
+		}
+	}
+}
+
+.swipper_cart .swiper-slide {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: auto;
+	min-height: 450px;
+	width: 390px;
+}
+.swipper_cart .swiper-slide img {
+	object-fit: cover !important;
+	max-width: 100% !important;
+	height: auto;
+	flex: 1;
+	width: auto !important;
+}
+
+@media (max-width: 765px) {
+	.swipper_cart .swiper-slide {
+		width: 100% !important;
+	}
+
+	.swipper_cart {
+		margin-right: 20px !important;
+	}
+}
+.swipper_cart .swiper-wrapper {
+	margin-bottom: 10px !important;
+}
+.swipper_cart .swiper-pagination {
+	position: relative !important;
+}
+.swipper_cart .swiper-pagination-bullet {
+	width: 30px;
+	height: 3px;
+	margin: 0 !important;
+	border-radius: 0px !important;
+	background: rgba(255, 255, 255, 0.2);
+	outline: none;
+}
+.swipper_cart .swiper-pagination-bullet-active {
+	background: #115feb;
+}

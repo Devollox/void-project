@@ -1,32 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import Page from '@/components/page'
+import React from 'react'
+
+interface ProductProps {
+	title: string
+	count: number
+	slug: string
+	image: string
+	price: number
+	description: string
+}
 
 interface PageProps {
-	catalog?: string
+	catalog?: ProductProps
 }
 
-interface Product {
-	title: string
-	slug: string
+const PageSlug: React.FC<PageProps> = ({ catalog }) => {
+	return (
+		<Page title={catalog?.title}>
+			{catalog?.price}
+			{catalog?.title}
+			{catalog?.description}
+		</Page>
+	)
 }
 
-const Page: React.FC<PageProps> = ({ catalog }) => {
-	const [data, setData] = useState<Product | null>(null)
-
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch(
-				`https://ideal-agreement-8f2bd69335.strapiapp.com/api/products?filters[slug][$eq]=${catalog}`
-			)
-			const result = await response.json()
-			setData(result.data[0])
-		}
-
-		if (catalog) {
-			fetchData()
-		}
-	}, [catalog])
-
-	return <>{data?.slug}</>
-}
-
-export default Page
+export default PageSlug

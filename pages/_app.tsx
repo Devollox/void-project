@@ -1,5 +1,7 @@
 import '@/styles/globals.css'
-import '@/styles/swipercart.css'
+import '@/styles/swiper.css'
+import 'swiper/css/pagination'
+
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'

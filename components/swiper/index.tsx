@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Autoplay, Pagination, Thumbs } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import SwiperContainer from './swipercontainer'
 
@@ -15,13 +15,10 @@ const SwiperProvider = () => {
 					disableOnInteraction: false,
 				}}
 				speed={4000}
-				thumbs={{
-					swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-				}}
 				pagination={{
 					clickable: true,
 				}}
-				modules={[Thumbs, Autoplay, Pagination]}
+				modules={[Autoplay, Pagination]}
 				className='swiper_main'
 			>
 				<SwiperSlide>
