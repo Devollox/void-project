@@ -60,33 +60,33 @@
 		height: 330px;
 	}
 	@media (max-width: 1789px) {
-		a img {
+		& a img {
 			width: 310px;
 			height: 310px;
 		}
 	}
 	@media (max-width: 1589px) {
-		a img {
+		& a img {
 			width: 310px;
 			height: 310px;
 		}
 	}
 	@media (max-width: 1189px) {
-		a img {
+		& a img {
 			display: inline-block;
 			width: 296px;
 			height: 296px;
 		}
 	}
 	@media (max-width: 767px) {
-		a img {
+		& a img {
 			display: inline-block;
 			width: 280px;
 			height: 280px;
 		}
 	}
 	@media (max-width: 380px) {
-		a img {
+		& a img {
 			display: inline-block;
 			width: 200px;
 			height: 200px;
