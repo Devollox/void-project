@@ -6,11 +6,15 @@ interface ProductProps {
 	slug: string
 	image: string
 	price: number
+	keyfatures: string
 	description: string
 }
 
 interface SlugContextProps {
 	catalog?: ProductProps
+	data: {
+		data: ProductProps[]
+	}
 }
 
 interface Context {
@@ -21,15 +25,26 @@ interface Context {
 
 export const getServerSideProps = async (context: Context) => {
 	const { slug } = context.query
-	const response = await fetch(
-		`https://ideal-agreement-8f2bd69335.strapiapp.com/api/products?populate=*?filters[slug][$eq]=${slug}`
-	)
-	const result = await response.json()
 
-	return {
-		props: {
-			catalog: result.data[0],
-		},
+	try {
+		const response = await fetch(
+			`${process.env.STRAPI_SERVER}/api/products?populate=*`
+		)
+		const data = await response.json()
+		const catalog =
+			data.data.find((item: ProductProps) => item.slug === slug) || null
+
+		return {
+			props: {
+				catalog: catalog ? catalog : [],
+			},
+		}
+	} catch (error) {
+		return {
+			props: {
+				catalog: [],
+			},
+		}
 	}
 }
 

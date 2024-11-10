@@ -1,16 +1,23 @@
 import useWindowSize from '@/hook/useWindowsSize'
 import Link from 'next/link'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Cart from './cart'
 import styles from './cart.module.css'
 
 interface ProductProps {
-	title: string
-	count: number
-	slug: string
-	image: []
-	price: number
+	id?: number
+	documentId?: string
+	createdAt?: string
+	updatedAt?: string
+	publishedAt?: string
+	title?: string
+	description?: string
+	price?: number
+	count?: number
+	slug?: string
+	type?: string
+	image?: []
 }
 
 interface CartContentProps {
@@ -45,29 +52,24 @@ const CartContent: React.FC<CartContentProps> = ({ data }) => {
 				<>
 					<div className={styles.wrapper_cart}>
 						<Swiper
+							slidesPerView={'auto'}
 							spaceBetween={30}
-							autoplay={{
-								disableOnInteraction: false,
-							}}
-							speed={4000}
 							pagination={{
 								clickable: true,
 							}}
-							modules={[Autoplay, Pagination]}
+							modules={[Pagination]}
 							className='swipper_cart'
 						>
-							{data.slice(0, 6).map((items: ProductProps) => {
+							{data.slice(0, 10).map((items: ProductProps) => {
 								return (
 									<SwiperSlide>
-										<div className={styles.mobile}>
-											<Cart
-												title={items.title}
-												slug={items.slug}
-												count={items.count}
-												price={items.price}
-												image={items.image}
-											/>
-										</div>
+										<Cart
+											title={items.title}
+											slug={items.slug}
+											count={items.count}
+											price={items.price}
+											image={items.image}
+										/>
 									</SwiperSlide>
 								)
 							})}
@@ -78,7 +80,7 @@ const CartContent: React.FC<CartContentProps> = ({ data }) => {
 			<div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
 				<Link href='/catalog'>
 					<div className={styles.button_other}>
-						<span>Показать ещё</span>
+						<span>Show more</span>
 					</div>
 				</Link>
 			</div>

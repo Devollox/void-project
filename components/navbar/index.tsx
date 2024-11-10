@@ -27,7 +27,7 @@ const Navbar = () => {
 					<div className={styles.wrapper_menu}>
 						<div className={styles.logo_container}>
 							<Link href='/'>
-								<span className={styles.logo_text}>ПУСТОТА ПРОДЖЕКТ</span>
+								<span className={styles.logo_text}>Void Project</span>
 							</Link>
 						</div>
 						<div className={styles.wrapper_burger_menu}>

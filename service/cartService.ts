@@ -1,9 +1,19 @@
 import { BehaviorSubject } from 'rxjs'
 
 export interface CartItem {
-	slug?: string
-	name?: string
-	price?: number
+	id: number
+	documentId: string
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	title: string
+	description: string
+	price: number
+	count: number
+	slug: string
+	type: string
+	keyfatures: string
+	image: []
 }
 
 export class CartService {
@@ -21,15 +31,20 @@ export class CartService {
 		}
 	}
 
-	public addToCart(item: CartItem): void {
+	public addToCart(itemToAdd: CartItem): void {
 		const currentItems = this.cartItemsSubject.getValue()
-		const existingItemIndex = currentItems.findIndex(i => i.slug === item.slug)
+		const existingItemIndex = currentItems.findIndex(
+			i => i.slug === itemToAdd.slug
+		)
 		if (existingItemIndex >= 0) {
 			return
 		}
-		this.cartItemsSubject.next([...currentItems, item])
+		this.cartItemsSubject.next([...currentItems, itemToAdd])
 		if (typeof window !== 'undefined') {
-			localStorage.setItem('cartItems', JSON.stringify([...currentItems, item]))
+			localStorage.setItem(
+				'cartItems',
+				JSON.stringify([...currentItems, itemToAdd])
+			)
 		}
 	}
 

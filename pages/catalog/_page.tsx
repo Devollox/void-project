@@ -7,6 +7,7 @@ interface ProductProps {
 	slug: string
 	image: string
 	price: number
+	keyfatures: string
 	description: string
 }
 
@@ -15,11 +16,14 @@ interface PageProps {
 }
 
 const PageSlug: React.FC<PageProps> = ({ catalog }) => {
+	if (!catalog) return
+
 	return (
-		<Page title={catalog?.title}>
+		<Page title='Catalog'>
 			{catalog?.price}
 			{catalog?.title}
 			{catalog?.description}
+			{catalog?.keyfatures}
 		</Page>
 	)
 }
