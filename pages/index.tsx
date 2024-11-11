@@ -1,34 +1,19 @@
-import CartContent from '@/components/cartcontent'
+import CartSwiper from '@/components/cartswiper'
 import Page from '@/components/page'
 import SwiperProvider from '@/components/swiper'
+import { CartItem } from '@/service/cartService'
 import React from 'react'
-
-interface ProductProps {
-	id: number
-	documentId: string
-	createdAt: string
-	updatedAt: string
-	publishedAt: string
-	title: string
-	description: string
-	price: number
-	count: number
-	slug: string
-	type: string
-	keyfatures: string
-	image: []
-}
 
 interface ApiResponse {
 	data: {
-		data: ProductProps[]
+		data: CartItem[]
 	}
 }
 
 export async function getServerSideProps() {
 	try {
 		const res = await fetch(
-			`${process.env.STRAPI_SERVER}/api/products?populate=*`
+			`${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/products?populate=*`
 		)
 		const data = await res.json()
 
@@ -51,7 +36,7 @@ const VoidProject: React.FC<ApiResponse> = ({ data }) => {
 		<>
 			<Page>
 				<SwiperProvider />
-				<CartContent data={data.data} />
+				<CartSwiper data={data.data} />
 			</Page>
 		</>
 	)

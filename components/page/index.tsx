@@ -42,7 +42,6 @@ const Page: React.FC<PageProps> = ({ title, description, children }) => {
 		fetchData()
 	}, [])
 
-	console.log(dataFooter)
 	return (
 		<>
 			<Head

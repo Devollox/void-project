@@ -1,0 +1,87 @@
+.navbar {
+	vertical-align: center;
+	width: 100%;
+	top: 120px;
+	background: #000000;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	z-index: 15;
+	transition: 0.5s;
+}
+.container {
+	display: flex;
+
+	& h2 {
+		font-size: 28px;
+		letter-spacing: 13px;
+	}
+}
+.tap_button {
+	top: -4px;
+	display: inline-block;
+	font-size: 15px;
+}
+.button {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 18px;
+}
+@media (max-width: 1185px) {
+	.button {
+		display: none !important;
+	}
+	.wrapper_price {
+		margin-top: 17px;
+		display: block !important;
+	}
+}
+.delimiter {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	width: 1px;
+	height: 24px;
+	background: rgba(255, 255, 255, 0.2);
+}
+.active a {
+	color: #ffffff;
+}
+.button:hover,
+.active {
+	border-bottom: 2px solid #1378f5;
+	color: #ffffff;
+}
+.wrapper_content_navbar {
+	display: flex;
+	justify-content: space-between;
+}
+.price_new {
+	margin-right: 10px;
+	font-size: 17px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.65);
+}
+.price_new span {
+	color: rgba(255, 255, 255, 0.4) !important;
+}
+.wrapper_price {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.price_title {
+	font-size: 20px;
+}
+.price_button {
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.4) !important;
+	&:hover {
+		color: rgba(255, 255, 255, 0.8) !important;
+	}
+	&:active {
+		color: rgba(255, 255, 255, 1) !important;
+	}
+}

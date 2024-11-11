@@ -1,7 +1,8 @@
+import { CartItem, cartService } from '@/service/cartService'
 import { RedisService } from '@/service/redisService'
 import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { memo, useEffect, useState } from 'react'
 import Cart from '../icons/cart'
 import Profile from '../icons/profile'
 import Search from '../icons/search'
@@ -11,6 +12,7 @@ const redisService = new RedisService()
 
 const Navbar = () => {
 	const { data: session } = useSession()
+	const [cartItems, setCartItems] = useState<CartItem[]>([])
 
 	useEffect(() => {
 		const updateSession = () => {
@@ -19,6 +21,16 @@ const Navbar = () => {
 
 		updateSession()
 	}, [session])
+
+	useEffect(() => {
+		const subscription = cartService.cartItems$.subscribe(items => {
+			setCartItems(items)
+		})
+
+		return () => {
+			subscription.unsubscribe()
+		}
+	}, [])
 
 	return (
 		<>
@@ -56,6 +68,9 @@ const Navbar = () => {
 							</>
 						)}
 						<Link href='/cart' style={{ marginRight: '0' }}>
+							{cartItems.length != 0 && (
+								<span className={styles.length_cart}>{cartItems.length}</span>
+							)}
 							<Cart />
 						</Link>
 					</div>
@@ -65,4 +80,4 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar
+export default memo(Navbar)

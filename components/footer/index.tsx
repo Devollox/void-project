@@ -2,6 +2,7 @@ import useWindowSize from '@/hook/useWindowsSize'
 import Link from 'next/link'
 import Cart from './cart'
 import styles from './footer.module.css'
+import { memo } from 'react'
 
 interface ProductProps {
 	id: number
@@ -116,11 +117,11 @@ const Footer: React.FC<CartContentProps> = ({ data, title }) => {
 				</div>
 				<div className={styles.copyright_footer}>
 					<div>Copyright © 2022-2024 Void Project</div>
-					<div>Все права зарегистрированы</div>
+					<div>All rights stolen :)</div>
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default Footer
+export default memo(Footer)

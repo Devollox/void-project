@@ -101,3 +101,20 @@
 	letter-spacing: 5.5px;
 	line-height: 14px;
 }
+.length_cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Geometria, Inter, Avenir, Helvetica, Arial, sans-serif;
+	color: #fff;
+	background-color: #000;
+	border-radius: 100px;
+	font-size: 16px;
+	min-height: 16px;
+	min-width: 16px;
+	padding: 4px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	scale: 60%;
+}

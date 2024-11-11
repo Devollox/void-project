@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { memo } from 'react'
 import styles from './swiper.module.css'
 
 interface SwiperContainerProps {
@@ -25,4 +26,4 @@ const SwiperContainer: React.FC<SwiperContainerProps> = ({
 		</>
 	)
 }
-export default SwiperContainer
+export default memo(SwiperContainer)

@@ -1,71 +1,40 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-    
-     ██▒   █▓ ▒█████   ██▓▓█████▄     ██▓███   ██▀███   ▒█████   ▄▄▄██▀▀▀▓█████  ▄████▄  ▄▄▄█████▓
-    ▓██░   █▒▒██▒  ██▒▓██▒▒██▀ ██▌   ▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒   ▒██   ▓█   ▀ ▒██▀ ▀█  ▓  ██▒ ▓▒
-     ▓██  █▒░▒██░  ██▒▒██▒░██   █▌   ▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒   ░██   ▒███   ▒▓█    ▄ ▒ ▓██░ ▒░
-      ▒██ █░░▒██   ██░░██░░▓█▄   ▌   ▒██▄█▓▒ ▒▒██▀▀█▄  ▒██   ██░▓██▄██▓  ▒▓█  ▄ ▒▓▓▄ ▄██▒░ ▓██▓ ░ 
-       ▒▀█░  ░ ████▓▒░░██░░▒████▓    ▒██▒ ░  ░░██▓ ▒██▒░ ████▓▒░ ▓███▒   ░▒████▒▒ ▓███▀ ░  ▒██▒ ░ 
-       ░ ▐░  ░ ▒░▒░▒░ ░▓   ▒▒▓  ▒    ▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░  ▒▓▒▒░   ░░ ▒░ ░░ ░▒ ▒  ░  ▒ ░░   
-       ░ ░░    ░ ▒ ▒░  ▒ ░ ░ ▒  ▒    ░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░  ▒ ░▒░    ░ ░  ░  ░  ▒       ░    
-         ░░  ░ ░ ░ ▒   ▒ ░ ░ ░  ░    ░░         ░░   ░ ░ ░ ░ ▒   ░ ░ ░      ░   ░          ░      
-          ░      ░ ░   ░     ░                   ░         ░ ░   ░   ░      ░  ░░ ░               
-         ░                 ░                                                    ░                 
 
-```
-Void Project Shop is an online store selling headsets for computers and more, fully customizable and using the CMS system in `Strapi` video as well as `Redis`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Setup
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-> You can use the Vercel server, since the site is written in Next.js, and deployment will be very simple or on your own dedicated servers.
+[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-### From Sources
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-1. Install [node.js](#nodejs-version-compatibility)
-2. Run `git clone https://github.com/Devollox/void-project.git`
-   of the repository)
-3. Go into the cloned folder with `cd void-project`
-4. Run `npm install` (only has to be done before first start or when you change the source code)
-5. Run `npm run dev`
-6. Browse to <http://localhost:3000>
+This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Demo
-<http://>
+## Learn More
 
-## Documentation
-Creates an `.env` file to which we add variables
-```.env
-  You can get it directly from GitHub - https://docs.github.com/ru/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions
-GITHUB_ID= 
-GITHUB_SECRET=
+To learn more about Next.js, take a look at the following resources:
 
-  You can get it directly from Google Console - https://console.cloud.google.com
-GOOGLE_ID=
-GOOGLE_SECRET=
-NEXTAUTH_SECRET=supersecret
-NEXTAUTH_URL=[your domain]
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-  You can get it directly from Redis - [https://console.cloud.google.com](https://upstash.com/)
-NEXT_PUBLIC_UPSTASH_REDIS_REST_URL=
-NEXT_PUBLIC_UPSTASH_REDIS_REST_TOKEN=
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-  You can get it directly from Strapi - https://cloud.strapi.io
-NEXT_PUBLIC_STRAPI_SERVER=
-```
-## Stack
+## Deploy on Vercel
 
-> 1. Next.js
-> 2. Next Auth.js
-> 3. Redis - main DB
-> 4. Strapi - control product cart
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### There should not be any difficulties; you will need to create a CMS where you will need to add
-
-1. title - VGN F1 PRO MAX
-2. description - \
-3. price - 7,499
-4. slug - vgn_f1_pro_max - `it should always be different`
-5. type - mouse
-6. keyfatures - \
-7. image - [1-4]
-
-#### After setting up `Strapi` and opening and adding it to `.env`, your site should start smoothly and cards will be displayed
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.

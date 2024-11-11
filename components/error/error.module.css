@@ -1,0 +1,15 @@
+.empty_cart_container {
+	margin-top: 100px;
+}
+.empty_cart_text {
+	font-size: 36px;
+	text-align: center;
+	color: #bababa;
+	margin-bottom: 42px;
+}
+.empty_cart_desc {
+	text-align: center;
+	color: #000;
+	font-size: 16px;
+	margin-bottom: 100px;
+}

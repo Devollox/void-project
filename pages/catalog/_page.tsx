@@ -1,18 +1,10 @@
+import NavbarCatalog from '@/components/catalog/navbarcatalog'
 import Page from '@/components/page'
+import { CartItem } from '@/service/cartService'
 import React from 'react'
 
-interface ProductProps {
-	title: string
-	count: number
-	slug: string
-	image: string
-	price: number
-	keyfatures: string
-	description: string
-}
-
 interface PageProps {
-	catalog?: ProductProps
+	catalog?: CartItem
 }
 
 const PageSlug: React.FC<PageProps> = ({ catalog }) => {
@@ -20,10 +12,11 @@ const PageSlug: React.FC<PageProps> = ({ catalog }) => {
 
 	return (
 		<Page title='Catalog'>
-			{catalog?.price}
-			{catalog?.title}
-			{catalog?.description}
-			{catalog?.keyfatures}
+			<NavbarCatalog
+				title={catalog.title}
+				count={catalog.count}
+				data={catalog}
+			/>
 		</Page>
 	)
 }

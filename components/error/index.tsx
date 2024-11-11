@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import React from 'react'
+import React, { memo } from 'react'
+import Page from '../page'
+import styles from './error.module.css'
 
 interface Props {
 	status?: number | string | null
@@ -9,13 +10,16 @@ interface Props {
 const Error: React.FC<Props> = ({ status, children }) => {
 	return (
 		<>
-			<Head>
-				<title>{status} — Void Project</title>
-			</Head>
-
-			<main>{children}</main>
+			<Page title='Error'>
+				<div className={styles.empty_cart_container}>
+					<div className={styles.empty_cart_text}>Page not found</div>
+					<div className={styles.empty_cart_desc}>
+						<a href='/'>Click here</a>, to continue shopping{' '}
+					</div>
+				</div>
+			</Page>
 		</>
 	)
 }
 
-export default Error
+export default memo(Error)

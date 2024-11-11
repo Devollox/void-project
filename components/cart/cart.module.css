@@ -1,0 +1,146 @@
+.navbar {
+	vertical-align: center;
+
+	top: 120px;
+	background: #000000;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	z-index: 15;
+	transition: 0.5s;
+}
+.container {
+	display: flex;
+
+	& h2 {
+		font-size: 28px;
+		display: flex;
+	}
+
+	& div {
+		cursor: pointer;
+		color: #fff6;
+		display: flex;
+		padding: 0 18px;
+	}
+	& div:hover {
+		transition: 0.2s;
+		color: #fff !important;
+	}
+}
+.empty_cart_container {
+	margin-top: 100px;
+}
+.delimiter {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	width: 1px;
+	height: 24px;
+	background: rgba(255, 255, 255, 0.2);
+}
+.empty_cart_text {
+	font-size: 36px;
+	text-align: center;
+	color: #bababa;
+	margin-bottom: 42px;
+}
+.empty_cart_desc {
+	text-align: center;
+	color: #000;
+	font-size: 16px;
+	margin-bottom: 100px;
+}
+.button {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.button:hover,
+.active {
+	border-bottom: 2px solid #1378f5;
+	color: #ffffff;
+}
+.price_new {
+	margin-right: 10px;
+	font-size: 17px;
+	font-weight: 600;
+	color: #ffffffa6;
+
+	& span {
+		color: #fff6 !important;
+	}
+}
+.wrapper_product_cart {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.product_title {
+	font-size: 19px;
+	margin-bottom: 5px;
+}
+.button_buy_product {
+	display: inline-block;
+	height: 52px;
+	line-height: 50px;
+	color: #fff;
+	background-color: #0000;
+	font-size: 16px;
+	font-weight: 600;
+	outline: none;
+	padding: 0 38px;
+	border: 2px solid #ffffff98;
+	border-radius: 26px;
+	transition: all 0.3s;
+	opacity: 0.8;
+	cursor: pointer;
+
+	&:hover {
+		border: 2px solid #fff;
+		opacity: 1;
+	}
+}
+.product_container {
+	display: block;
+}
+.total_price {
+	padding: 20px;
+
+	&:hover .total_price_text {
+		transition: opacity 0.5s;
+		opacity: 1;
+	}
+	& .price_new {
+		font-size: 24px;
+	}
+}
+.total_price_text {
+	position: absolute;
+	margin-top: -15px;
+	font-size: 12px;
+	color: #fffa;
+	opacity: 0;
+}
+@media (max-width: 800px) {
+	.title_hidden {
+		display: none;
+	}
+}
+.cart_delete_button {
+	align-items: center;
+	transition: background-color 0.2s ease-in-out;
+	border: 1px solid hsla(0, 0%, 100%, 0.102);
+	border-radius: 0.5rem;
+	display: flex;
+	height: 1rem;
+	justify-content: center;
+	padding: 0.5rem;
+	width: 1rem;
+	cursor: pointer;
+
+	&:hover {
+		transition: border 0.4s;
+		border: 1px solid hsla(0, 0%, 100%, 0.252);
+	}
+}

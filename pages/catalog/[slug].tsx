@@ -1,19 +1,10 @@
 import PageSlug from './_page'
-
-interface ProductProps {
-	title: string
-	count: number
-	slug: string
-	image: string
-	price: number
-	keyfatures: string
-	description: string
-}
+import { CartItem } from '@/service/cartService'
 
 interface SlugContextProps {
-	catalog?: ProductProps
+	catalog?: CartItem
 	data: {
-		data: ProductProps[]
+		data: CartItem[]
 	}
 }
 
@@ -28,11 +19,11 @@ export const getServerSideProps = async (context: Context) => {
 
 	try {
 		const response = await fetch(
-			`${process.env.STRAPI_SERVER}/api/products?populate=*`
+			`${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/products?populate=*`
 		)
 		const data = await response.json()
 		const catalog =
-			data.data.find((item: ProductProps) => item.slug === slug) || null
+			data.data.find((item: CartItem) => item.slug === slug) || null
 
 		return {
 			props: {

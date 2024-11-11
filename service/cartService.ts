@@ -1,11 +1,6 @@
 import { BehaviorSubject } from 'rxjs'
 
 export interface CartItem {
-	id: number
-	documentId: string
-	createdAt: string
-	updatedAt: string
-	publishedAt: string
 	title: string
 	description: string
 	price: number
@@ -64,3 +59,5 @@ export class CartService {
 		localStorage.setItem('cartItems', JSON.stringify([]))
 	}
 }
+
+export const cartService = new CartService()
