@@ -16,7 +16,6 @@ const NavbarCatalog: React.FC<NavbarCatalogProps> = ({
 	const handleAddToCart = () => {
 		const cartData: CartItem = {
 			title: data!.title,
-			count: data!.count,
 			slug: data!.slug,
 			image: data!.image,
 			price: data!.price,
