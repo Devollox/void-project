@@ -59,12 +59,12 @@ const NavbarCatalog: React.FC<NavbarCatalogProps> = ({
 									}}
 									className={`${styles.price_title} ${styles.price_button}`}
 								>
-									Добавить в корзину
+									Add to cart
 								</div>
 							</>
 						) : (
 							<>
-								<div className={styles.price_title}>Нет в наличии</div>
+								<div className={styles.price_title}>Not available</div>
 							</>
 						)}
 					</div>

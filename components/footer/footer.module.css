@@ -71,10 +71,14 @@
 }
 .menu_link {
 	display: inline-block;
-
 	font-size: 15px;
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.65);
+
+	& a:hover {
+		transition: color 0.5s;
+		color: #ffffff;
+	}
 }
 .footer_menu {
 	width: 100%;

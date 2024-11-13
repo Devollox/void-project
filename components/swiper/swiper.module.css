@@ -108,6 +108,7 @@
 	}
 }
 .swiper_button {
+	cursor: pointer;
 	margin-top: 20px;
 	display: inline-block;
 	height: 52px;

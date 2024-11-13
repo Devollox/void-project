@@ -27,14 +27,16 @@ const Cart = () => {
 	}
 
 	const totalPrice = cartItems.reduce((accumulator, item) => {
-		return accumulator + item.price
+		return accumulator + item.price!
 	}, 0)
 
 	return (
 		<Page title='Cart'>
 			<NavbartCart cartLength={cartItems.length}>
-				<div style={{ padding: '0' }} onClick={handleClearCart}>
-					<div className={styles.button}>Clear basket</div>
+				<div style={{ padding: '0' }}>
+					<div onClick={handleClearCart} className={styles.button}>
+						Clear basket
+					</div>
 					{cartItems.length > 1 && (
 						<>
 							<div className={styles.button} style={{ padding: '0px' }}>
@@ -48,14 +50,13 @@ const Cart = () => {
 			{cartItems.map(item => {
 				return (
 					<ProductCart
-						price={item.price}
-						title={item.title}
-						description={item.description}
-						count={item.count}
-						slug={item.slug}
-						type={item.type}
-						keyfatures={item.keyfatures}
-						image={item.image}
+						price={item.price!}
+						title={item.title!}
+						description={item.description!}
+						slug={item.slug!}
+						type={item.type!}
+						keyfatures={item.keyfatures!}
+						image={item.image!}
 						data={item}
 					/>
 				)

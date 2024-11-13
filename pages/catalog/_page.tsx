@@ -10,13 +10,11 @@ interface PageProps {
 const PageSlug: React.FC<PageProps> = ({ catalog }) => {
 	if (!catalog) return
 
+	let count = 1
+
 	return (
 		<Page title='Catalog'>
-			<NavbarCatalog
-				title={catalog.title}
-				count={catalog.count}
-				data={catalog}
-			/>
+			<NavbarCatalog title={catalog.title!} count={count} data={catalog} />
 		</Page>
 	)
 }

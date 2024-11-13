@@ -1,8 +1,8 @@
 import useWindowSize from '@/hook/useWindowsSize'
 import Link from 'next/link'
+import { memo } from 'react'
 import Cart from './cart'
 import styles from './footer.module.css'
-import { memo } from 'react'
 
 interface ProductProps {
 	id: number
@@ -87,7 +87,8 @@ const Footer: React.FC<CartContentProps> = ({ data, title }) => {
 								<ul className={styles.menu} style={{ margin: '0px' }}>
 									<li className={styles.menu_item}>
 										<a className={styles.menu_link}>
-											Main<span className={styles.title_text}> {title}</span>
+											<Link href={'/'}>Main</Link>
+											<span className={styles.title_text}> {title}</span>
 										</a>
 									</li>
 								</ul>

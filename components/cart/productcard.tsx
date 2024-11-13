@@ -7,7 +7,6 @@ interface ProductCartProps {
 	title: string
 	description: string
 	price: number
-	count: number
 	slug: string
 	type: string
 	keyfatures: string
@@ -17,7 +16,6 @@ interface ProductCartProps {
 
 const ProductCart: React.FC<ProductCartProps> = ({
 	title,
-	count,
 	image,
 	price,
 	slug,

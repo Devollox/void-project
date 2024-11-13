@@ -1,3 +1,4 @@
+import { data } from '@/public/swiper/data_banner.json'
 import { memo } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -19,18 +20,16 @@ const SwiperProvider = () => {
 				modules={[Autoplay, Pagination]}
 				className='swiper_main'
 			>
-				<SwiperSlide>
-					<SwiperContainer
-						image='/W1-1.png'
-						description='Superior build quality and luxurious comfort'
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<SwiperContainer
-						image='/hs2_banner.png'
-						description='Classic design and stunning 7.1 sound'
-					/>
-				</SwiperSlide>
+				{data.map(item => {
+					return (
+						<SwiperSlide>
+							<SwiperContainer
+								image={`/swiper/${item.image}`}
+								description={`${item.title}`}
+							/>
+						</SwiperSlide>
+					)
+				})}
 			</Swiper>
 		</>
 	)

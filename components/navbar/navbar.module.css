@@ -1,4 +1,4 @@
-.wrapper_conent {
+.wrapper_content {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
@@ -13,7 +13,7 @@
 	justify-content: center;
 }
 @media (min-width: 1790px) {
-	.wrapper_conent {
+	.wrapper_content {
 		width: 1680px;
 		margin: 30px;
 	}
@@ -22,7 +22,7 @@
 	}
 }
 @media (max-width: 1790px) {
-	.wrapper_conent {
+	.wrapper_content {
 		margin: 30px;
 	}
 	.wrapper_burger_menu {
@@ -114,7 +114,7 @@
 	min-width: 16px;
 	padding: 4px;
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	margin-left: 85px;
+	margin-top: -35px;
 	scale: 60%;
 }

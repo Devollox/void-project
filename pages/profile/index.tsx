@@ -24,13 +24,13 @@ const Profile = () => {
 	return (
 		<>
 			<Page title='Profile'>
-				<div
+				<button
 					onClick={() => {
 						signOut({ callbackUrl: '/' })
 					}}
 				>
-					Выйди нахуй из системы и не позорься! {session?.user?.name}
-				</div>
+					SignOut
+				</button>
 			</Page>
 		</>
 	)

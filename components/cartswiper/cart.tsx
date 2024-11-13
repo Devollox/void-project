@@ -1,26 +1,13 @@
+import { CartItem } from '@/service/cartService'
 import Image from 'next/image'
 import Link from 'next/link'
-import Arrowright from '../icons/arrowright'
+import ArrowRight from '../icons/arrowright'
 import Heart from '../icons/heart'
 import styles from './cart.module.css'
 
-interface ProductProps {
-	id?: number
-	documentId?: string
-	createdAt?: string
-	updatedAt?: string
-	publishedAt?: string
-	title?: string
-	description?: string
-	price?: number
-	count?: number
-	slug?: string
-	type?: string
-	image?: []
-}
-
-const Cart: React.FC<ProductProps> = ({ title, count, slug, image, price }) => {
+const Cart: React.FC<CartItem> = ({ title, slug, image, price }) => {
 	let backgroundImage: any = image!.find((item: any) => item.name === '1.png')
+	let count = 1
 	return (
 		<>
 			<div className={styles.wrapper_product_cart}>
@@ -29,7 +16,7 @@ const Cart: React.FC<ProductProps> = ({ title, count, slug, image, price }) => {
 				) : (
 					<>
 						<div className={styles.product_status}>
-							<span>Нет в наличии</span>
+							<span>Not available</span>
 						</div>
 					</>
 				)}
@@ -57,7 +44,7 @@ const Cart: React.FC<ProductProps> = ({ title, count, slug, image, price }) => {
 						</div>
 						<div>
 							<Link href={`/catalog/${slug}`} className={styles.read_more}>
-								<Arrowright />
+								<ArrowRight />
 							</Link>
 						</div>
 					</span>

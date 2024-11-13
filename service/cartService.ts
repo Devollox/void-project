@@ -1,14 +1,13 @@
 import { BehaviorSubject } from 'rxjs'
 
 export interface CartItem {
-	title: string
-	description: string
-	price: number
-	count: number
-	slug: string
-	type: string
-	keyfatures: string
-	image: []
+	title?: string
+	description?: string
+	price?: number
+	slug?: string
+	type?: string
+	keyfatures?: string
+	image?: []
 }
 
 export class CartService {

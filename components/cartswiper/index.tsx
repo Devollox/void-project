@@ -1,27 +1,13 @@
 import useWindowSize from '@/hook/useWindowsSize'
+import { CartItem } from '@/service/cartService'
 import Link from 'next/link'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Cart from './cart'
 import styles from './cart.module.css'
 
-interface ProductProps {
-	id?: number
-	documentId?: string
-	createdAt?: string
-	updatedAt?: string
-	publishedAt?: string
-	title?: string
-	description?: string
-	price?: number
-	count?: number
-	slug?: string
-	type?: string
-	image?: []
-}
-
 interface CartContentProps {
-	data?: ProductProps[]
+	data?: CartItem[]
 }
 
 const CartSwiper: React.FC<CartContentProps> = ({ data }) => {
@@ -34,12 +20,11 @@ const CartSwiper: React.FC<CartContentProps> = ({ data }) => {
 				<>
 					<div className={styles.wrapper_cart}>
 						<div className={styles.grid_cart}>
-							{data.slice(0, 8).map((items: ProductProps) => {
+							{data.slice(0, 8).map((items: CartItem) => {
 								return (
 									<Cart
 										title={items.title}
 										slug={items.slug}
-										count={items.count}
 										price={items.price}
 										image={items.image}
 									/>
@@ -60,13 +45,12 @@ const CartSwiper: React.FC<CartContentProps> = ({ data }) => {
 							modules={[Pagination]}
 							className='swipper_cart'
 						>
-							{data.slice(0, 10).map((items: ProductProps) => {
+							{data.slice(0, 10).map((items: CartItem) => {
 								return (
 									<SwiperSlide>
 										<Cart
 											title={items.title}
 											slug={items.slug}
-											count={items.count}
 											price={items.price}
 											image={items.image}
 										/>

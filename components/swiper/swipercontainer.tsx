@@ -18,9 +18,9 @@ const SwiperContainer: React.FC<SwiperContainerProps> = ({
 			<div className={styles.wrapper_swiper_content}>
 				<div className={styles.swiper_content_inside}>
 					<div className={styles.swiper_description}>{description}</div>
-					<button className={styles.swiper_button}>
-						<Link href='/catalog'>Show</Link>
-					</button>
+					<Link href='/catalog'>
+						<button className={styles.swiper_button}>Show</button>
+					</Link>
 				</div>
 			</div>
 		</>
